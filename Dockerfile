@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.9-buster
 COPY . /app
 WORKDIR /app
 
@@ -11,6 +11,6 @@ ENV LC_ALL ja_JP.UTF-8
 ENV TZ JST-9
 ENV TERM xterm
 
-RUN pip intsall -r requirements.txt
+RUN pip install -r requirements.txt
 RUN python3 setup.py install
 CMD python3 -m myapp.cli
